@@ -23,7 +23,7 @@ class robot:
                 self.hardware.update({ j:0 for j in hardware[i].keys()})
             except:
                 print("not in hardware")
-
+        print(self.hardware)
     def run(self):
         self.left, self.right, self.gripper = 87,89, 0
         while 1:
@@ -37,7 +37,7 @@ class robot:
             self.board.servo_write(self.servoLeft, int(self.map(self.left, 0, 255, 175, 0)))
             self.board.servo_write(self.servoRight, int(self.map(self.right, 0, 255, 0, 179)))
             self.board.servo_write(self.servoGripper, int(self.map(self.gripper, 0, 255, 0, 180)))
-
+        
 if __name__ == "__main__":
     #alice = robot("alice", {"servo": {"servoLeft":8, "servoRight":9} })
     beans = robot("beans", { "digitalOutput": {"in1_FR": 1, "in2_FR": 1, "in1_FL": 1,"in2_FL": 1,"in1_BR": 1,"in2_BR": 1, "in1_BL": 1,"in2_BL": 1 },
