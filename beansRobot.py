@@ -20,7 +20,7 @@ class robot:
         for i in hardware.keys():
             try: 
                 [HARDWARE_TYPES[i](hardware[i][j]) for j in hardware[i].keys()]
-                self.hardware.update({ [j]:0 for j in hardware[i].keys()})
+                self.hardware.update({ j:0 for j in hardware[i].keys()})
             except:
                 print("not in hardware")
 
