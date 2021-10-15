@@ -5,8 +5,9 @@ class robot:
     def map(self, x, in_min, in_max, out_min, out_max):
         return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
         
-    def __init__(self, name, hardware):
+    def __init__(self, name, hardware, values):
         self.name = name
+        self.values = values
         self.board = pymata4.Pymata4()
         self.hardware = {}
         HARDWARE_TYPES = {  "servo":self.board.set_pin_mode_servo,
@@ -19,7 +20,7 @@ class robot:
         for i in hardware.keys():
             try: 
                 [HARDWARE_TYPES[i](hardware[i][j]) for j in hardware[i].keys()]
-                self.hardware.update({ j:0 for j in hardware[i].keys()})
+                self.hardware.update(hardware[i])
             except:
                 print("not in hardware")
         
