@@ -39,7 +39,7 @@ class robot:
             self.board.servo_write(self.servoGripper, int(self.map(self.gripper, 0, 255, 0, 180)))
 
 if __name__ == "__main__":
-    alice = robot("alice", {"servo": {"servoLeft":8, "servoRight":9} })
+    #alice = robot("alice", {"servo": {"servoLeft":8, "servoRight":9} })
     beans = robot("beans", { "digitalOutput": {"in1_FR": 0, "in2_FR": 0, "in1_FL": 0,"in2_FL": 0,"in1_BR": 0,"in2_BR": 0, "in1_BL": 0,"in2_BL": 0 },
                             "pwmOutput": {"en_FR": 0, "en_FL": 0, "en_BR": 0, "en_BL":0} })
     #alice.run()
