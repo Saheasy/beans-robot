@@ -20,10 +20,10 @@ class robot:
         for i in hardware.keys():
             try: 
                 [HARDWARE_TYPES[i](hardware[i][j]) for j in hardware[i].keys()]
-                self.hardware.update(hardware[i])
+                self.hardware.update({ [j]:0 for j in hardware[i].keys()})
             except:
                 print("not in hardware")
-        print(self.hardware)
+
     def run(self):
         self.left, self.right, self.gripper = 87,89, 0
         while 1:
@@ -40,6 +40,6 @@ class robot:
 
 if __name__ == "__main__":
     #alice = robot("alice", {"servo": {"servoLeft":8, "servoRight":9} })
-    beans = robot("beans", { "digitalOutput": {"in1_FR": 0, "in2_FR": 0, "in1_FL": 0,"in2_FL": 0,"in1_BR": 0,"in2_BR": 0, "in1_BL": 0,"in2_BL": 0 },
+    beans = robot("beans", { "digitalOutput": {"in1_FR": 1, "in2_FR": 1, "in1_FL": 1,"in2_FL": 1,"in1_BR": 1,"in2_BR": 1, "in1_BL": 1,"in2_BL": 1 },
                             "pwmOutput": {"en_FR": 0, "en_FL": 0, "en_BR": 0, "en_BL":0} })
     #alice.run()
