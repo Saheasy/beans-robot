@@ -2,7 +2,7 @@ from robot_classes import robot
 
 class BeansRobot(robot):
     def tankDrive(self, in1, in2, en, value):
-        if value => 127:
+        if value >= 127:
             in1 = 1
             in2 = 0
         if value < 127:
