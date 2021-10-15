@@ -23,7 +23,7 @@ class robot:
                 self.hardware.update(hardware[i])
             except:
                 print("not in hardware")
-    
+        print(self.hardware)
     def run(self):
         self.left, self.right, self.gripper = 87,89, 0
         while 1:
