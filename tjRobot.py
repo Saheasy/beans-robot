@@ -10,8 +10,8 @@ class TrashJuniorRobot(robot):
             for event in events:
                 if event.code == "ABS_Z":
                     self.values["servo"] = event.state
-                    self.board.servo_write(self.hardware['servo'], int(event.state))
-                if event.code == "ABS_RZ":
+                    self.board.servo_write(self.hardware['servo'], int(self.map(event.state, 0, 255, 0, 180))))
+                if event.code == "ABS_X":
                     self.values["motor"] = event.state
                     self.board.pwm_write( self.hardware['pwm_motor'],abs(int(event.state)-127)*2 )
                     if event.state >= 127:
