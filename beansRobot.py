@@ -1,4 +1,5 @@
 from robot_classes import robot
+from inputs import get_gamepad
 
 class BeansRobot(robot):
     def tankDrive(self, in1, in2, en, value):

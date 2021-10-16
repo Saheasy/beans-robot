@@ -1,5 +1,4 @@
 from pymata4 import pymata4
-from inputs import get_gamepad
 
 class robot:
     def map(self, x, in_min, in_max, out_min, out_max):
