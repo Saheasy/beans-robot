@@ -22,8 +22,8 @@ class BeansRobot(robot):
                     self.values["FL"] = self.tankDrive(self.hardware["in1_FL"], self.hardware["in2_FL"], self.hardware["en_FL"], event.state)
                     self.values["BL"] = self.tankDrive(self.hardware["in1_BL"], self.hardware["in2_BL"], self.hardware["en_BL"], event.state)
                 if event.code == "ABS_RZ":
-                    self.values["FR"] = self.tankDrive(self.hardware["in1_FR"], self.hardware["in2_FR"], self.hardware["en_FR"], event.state)
-                    self.values["BR"] = self.tankDrive(self.hardware["in1_BR"], self.hardware["in2_BR"], self.hardware["en_BR"], event.state)
+                    self.values["FR"] = self.tankDrive(self.hardware["in1_FR"], self.hardware["in2_FR"], self.hardware["en_FR"], -event.state)
+                    self.values["BR"] = self.tankDrive(self.hardware["in1_BR"], self.hardware["in2_BR"], self.hardware["en_BR"], -event.state)
 if __name__ == "__main__":
     beans = BeansRobot("beans", 
                  {"digitalOutput": {
