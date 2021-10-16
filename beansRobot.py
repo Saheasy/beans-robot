@@ -36,4 +36,5 @@ if __name__ == "__main__":
                     "en_BR": 0, 
                     "en_BL":0}},
                   {"FR":0, "FL":0, "BR":0, "BL":0})
+    beans.run()
     
