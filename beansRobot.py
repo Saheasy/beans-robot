@@ -10,7 +10,7 @@ class BeansRobot(robot):
             in1 = 0
             in2 = 1
         en = abs(value - 127) * 2
-        return (values - 127)*2
+        return (value - 127)*2
         
     def run(self):
         while 1:
