@@ -14,9 +14,9 @@ class TrashJuniorRobot(robot):
                 if event.code == "ABS_RZ":
                     self.values["motor"] = event.state
                     self.board.pwm_write( self.hardware['pwm_motor'],abs(int(event.state)-127)*2 )
-                    if value >= 127:
+                    if event.state >= 127:
                         self.board.digital_write(self.hardware['en_motor'],1)
-                    if value < 127:
+                    if event.state < 127:
                         self.board.digital_write(self.hardware['en_motor'],0)
 if __name__ == "__main__":
     TJ = TrashJuniorRobot(
