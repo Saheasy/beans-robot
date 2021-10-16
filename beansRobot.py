@@ -24,7 +24,7 @@ class BeansRobot(robot):
                     self.values["FR"] = self.tankDrive(self.hardware["in1_FR"], self.hardware["in2_FR"], self.hardware["en_FR"], event.state)
                     self.values["BR"] = self.tankDrive(self.hardware["in1_BR"], self.hardware["in2_BR"], self.hardware["en_BR"], event.state)
 if __name__ == "__main__":
-    beans = robot("beans", 
+    beans = BeansRobot("beans", 
                  {"digitalOutput": {
                     "in1_FR": 1, "in2_FR": 1, 
                     "in1_FL": 1,"in2_FL": 1,
