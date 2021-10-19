@@ -12,16 +12,16 @@ class TrashJuniorRobot(robot):
                     self.values["right_motor"] = event.state
                     self.board.pwm_write( self.hardware['pwm_right_motor'],abs(int(event.state)-127)*2 )
                     if event.state >= 127:
-                        self.board.digital_write(self.hardware['en_right_motor'],1)
-                    if event.state < 127:
                         self.board.digital_write(self.hardware['en_right_motor'],0)
+                    if event.state < 127:
+                        self.board.digital_write(self.hardware['en_right_motor'],1)
                 if event.code == "ABS_Y":
                     self.values["left_motor"] = event.state
                     self.board.pwm_write( self.hardware['pwm_left_motor'],abs(int(event.state)-127)*2 )
                     if event.state >= 127:
-                        self.board.digital_write(self.hardware['en_left_motor'],1)
-                    if event.state < 127:
                         self.board.digital_write(self.hardware['en_left_motor'],0)
+                    if event.state < 127:
+                        self.board.digital_write(self.hardware['en_left_motor'],1)
 if __name__ == "__main__":
     TJ = TrashJuniorRobot(
                  "beans", 
