@@ -2,7 +2,6 @@ from robot_classes import robot
 from inputs import get_gamepad
 
 class TrashJuniorRobot(robot):
-    
     def run(self):
         while 1:
             print(self.values)
