@@ -22,7 +22,7 @@ class TrashJuniorRobot(robot):
                     self.board.pwm_write( self.hardware['pwm_left_motor'],abs(int(event.state)-127)*2 )
                     if event.state >= 127:
                         self.board.digital_write(self.hardware['in1_left_motor'],0)
-                        self.board.digital_write(self.hardware['in2_left_motor'],0)
+                        self.board.digital_write(self.hardware['in2_left_motor'],1)
                     if event.state < 127:
                         self.board.digital_write(self.hardware['in1_left_motor'],1)
                         self.board.digital_write(self.hardware['in2_left_motor'],0)

@@ -22,4 +22,5 @@ class robot:
                 self.hardware.update(hardware[i])
             except:
                 print("not in hardware")
+                
         
